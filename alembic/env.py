@@ -1,17 +1,13 @@
-from logging.config import fileConfig
-
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
-
-from alembic import context
 import sys
+import os
+from logging.config import fileConfig
+from sqlalchemy import engine_from_config, pool
+from alembic import context
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).parent.parent))
 
 from dotenv import load_dotenv
-import os
-
-# Явно указываем путь к .env (на один уровень выше папки alembic)
 load_dotenv(os.path.join(os.getcwd(), ".env"))
 
 
